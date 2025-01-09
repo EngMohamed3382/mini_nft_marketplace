@@ -58,8 +58,8 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+    - asstes/images/
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
@@ -76,10 +76,10 @@ flutter:
   fonts:
         - family: SF Pro Display
           fonts:
-              - asset: asstes\fonts\SFPRODISPLAYREGULAR.OTF
+              - asset: asstes/fonts/SFPRODISPLAYREGULAR.OTF
                 weight: 400
 
-              - asset: asstes\fonts\SFPRODISPLAYBOLD.OTF
+              - asset: asstes/fonts/SFPRODISPLAYBOLD.OTF
                 weight: 700
   #            
   # For details regarding fonts from package dependencies,
