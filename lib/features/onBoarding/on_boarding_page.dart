@@ -1,4 +1,4 @@
-import 'dart:ui_web';
+import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:mini_nft_marketplace/core/resources/asset_image_manager.dart';
@@ -23,14 +23,14 @@ class OnBoardingPage extends StatelessWidget {
           ),
           SizedBox(
             width: double.infinity,
-            child: const Column(
+            child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                SizedBox(
-                  height: 50,
+                const SizedBox(
+                  height: 70,
                 ),
-                Text(
+                const Text(
                   StringsManager.titleOnBoardingPage,
                   style: TextStyle(
                       color: Colors.white,
@@ -38,14 +38,21 @@ class OnBoardingPage extends StatelessWidget {
                       fontFamily: "SF Pro Display",
                       fontWeight: FontWeight.bold),
                 ),
-                Spacer(),
-                Text(
-                  StringsManager.titleOnBoardingPage,
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontSize: FontSize.f36_04,
-                      fontFamily: "SF Pro Display",
-                      fontWeight: FontWeight.bold),
+                const Spacer(),
+                ClipRRect(
+                  // ignore: sort_child_properties_last
+                  child: BackdropFilter(
+                    filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                    child: Container(
+                      height: 191,
+                      width: 306,
+                      color: ColorManager.kColorWhite.withOpacity(0.1),
+                    ),
+                  ),
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                const SizedBox(
+                  height: 70,
                 ),
               ],
             ),
