@@ -44,12 +44,53 @@ class OnBoardingPage extends StatelessWidget {
                   child: BackdropFilter(
                     filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
                     child: Container(
+
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.all(25),
+                      child: Column(
+                        children: [
+                          Text(
+                            'Explore and Mint NTFS',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontSize: 19.82,
+                                fontFamily: FontManagers.sfProDisplayFont,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(height: 4,),
+                          Text(
+                            'You can buy and sell the NFTs of the best artists in the world.',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              color: Colors.grey[350],
+                            ),
+                          ),
+                          SizedBox(height: 6,),
+                          Container(
+                            width: 198.2,
+                            decoration: BoxDecoration(
+                            borderRadius: BorderRadius.all(Radius.circular(20)),
+                            border: Border.all(color: Colors.white),
+                          ),
+                            child: ClipRRect(
+                              borderRadius: BorderRadius.circular(40),
+                              child: BackdropFilter(
+                                  filter: ImageFilter.blur(sigmaX: 100, sigmaY: 100),
+                                child: MaterialButton(
+                                  onPressed: () {},
+                                  child: Text('Get started now'),
+                                ),
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
                       height: 191,
                       width: 306,
                       color: ColorManager.kColorWhite.withOpacity(0.1),
                     ),
                   ),
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(40),
                 ),
                 const SizedBox(
                   height: 70,
