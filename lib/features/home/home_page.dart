@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:mini_nft_marketplace/core/resources/constants.dart';
 import 'package:mini_nft_marketplace/core/resources/font_manager.dart';
 import 'package:mini_nft_marketplace/features/onBoarding/widgets/custom_category_home_page.dart';
 
@@ -24,18 +25,18 @@ class HomePage extends StatelessWidget {
       ),
       body: Column(
         children: [
-            Container(
-              height: 300,
-              child: ListView(
+          SizedBox(
+              height: 167.57,
+              child: ListView.separated(
                 scrollDirection: Axis.horizontal,
-                children: [
-                  CustomCategoryHomePage(title: 'Art', image:'asstes/images/1.jpg' ),
-                  CustomCategoryHomePage(title: 'Art', image:'asstes/images/2.jpg' ),
-                  CustomCategoryHomePage(title: 'Art', image:'asstes/images/3.jpg' )
-                ],
-              ),
-            ),
-
+                itemBuilder: (context, index) => CustomCategoryHomePage(
+                    title: Constants.categoryList[index].title,
+                    image: Constants.categoryList[index].image),
+                separatorBuilder: (context, index) => SizedBox(
+                  width: 6.26,
+                ),
+                itemCount: 3,
+              )),
         ],
       ),
       backgroundColor: Color(0xff211134),

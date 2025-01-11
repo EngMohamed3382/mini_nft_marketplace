@@ -21,7 +21,6 @@ class CustomCategoryHomePage extends StatelessWidget {
           )),
       Positioned(
         bottom: -8,
-        left: 13,
         child: ClipRRect(
             borderRadius: BorderRadius.only(
               bottomLeft: Radius.circular(27.03),
@@ -41,7 +40,7 @@ class CustomCategoryHomePage extends StatelessWidget {
                         ]),
                   ),
                   height: 54.06,
-                  width: 225.26,
+                  width: 252.26,
                   child: Text(
                     title,
                     style: TextStyle(
