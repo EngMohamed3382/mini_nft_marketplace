@@ -7,6 +7,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       appBar: AppBar(
         centerTitle: true,
         title: const Text('NFT Marketplace',
@@ -18,16 +19,13 @@ class HomePage extends StatelessWidget {
         ),
         backgroundColor: Colors.transparent,
       ),
-      body: Container(
-        width: double.infinity,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            // SizedBox(height: 20,),
+      body: Column(
+        children: [
 
-          ],
-        ),
+
+        ],
       ),
+
       backgroundColor: Color(0xff211134),
     );
   }
