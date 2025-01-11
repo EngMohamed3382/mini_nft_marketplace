@@ -19,8 +19,10 @@ class HomePage extends StatelessWidget {
         ),
         backgroundColor: Colors.transparent,
       ),
+
       body: Column(
         children: [
+          Image(image: AssetImage('asstes/images/1.jpg'))
 
 
         ],
