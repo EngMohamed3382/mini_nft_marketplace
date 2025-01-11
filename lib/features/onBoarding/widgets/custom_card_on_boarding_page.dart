@@ -51,7 +51,7 @@ class CustomCardOnBoardingPage extends StatelessWidget {
                     filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
                     child: MaterialButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, RouteName.kHomePage);
+                        Navigator.pushReplacementNamed(context, RouteName.kHomePage);
                       },
                       child: Text('Get started now'),
                     ),
