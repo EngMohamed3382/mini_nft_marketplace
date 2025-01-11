@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:mini_nft_marketplace/core/resources/color_manager.dart';
 import 'package:mini_nft_marketplace/core/resources/font_manager.dart';
+import 'package:mini_nft_marketplace/core/resources/route_manager.dart';
 import 'package:mini_nft_marketplace/core/resources/size_manager.dart';
 import 'package:mini_nft_marketplace/core/resources/strings_manager.dart';
 
@@ -47,9 +48,11 @@ class CustomCardOnBoardingPage extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(40),
                   child: BackdropFilter(
-                    filter: ImageFilter.blur(sigmaX: 100, sigmaY: 100),
+                    filter: ImageFilter.blur(sigmaX: 20, sigmaY: 20),
                     child: MaterialButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, RouteName.kHomePage);
+                      },
                       child: Text('Get started now'),
                     ),
                   ),
