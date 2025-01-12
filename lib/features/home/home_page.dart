@@ -25,7 +25,7 @@ class HomePage extends StatelessWidget {
         ),
         backgroundColor: Colors.transparent,
       ),
-      body: Column(
+      body: ListView(
         children: [
           SizedBox(
               height: 167.57,
@@ -45,22 +45,7 @@ class HomePage extends StatelessWidget {
             CustomSubtitle(title: StringsManager.trendingCollections ),
           const SizedBox(height: 7,),
 
-          SizedBox(
-              height: 167.57,
-              child: ListView.separated(
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) => CustomCategoryHomePage(
-                    title: Constants.categoryList[index].title,
-                    image: Constants.categoryList[index].image),
-                separatorBuilder: (context, index) => SizedBox(
-                  width: 6.26,
-                ),
-                itemCount: 3,
-              )),
-          SizedBox(
-            height: 27,
-          ),
-          CustomSubtitle(title: StringsManager.trendingCollections ),
+
         ],
       ),
       backgroundColor: Color(0xff211134),
