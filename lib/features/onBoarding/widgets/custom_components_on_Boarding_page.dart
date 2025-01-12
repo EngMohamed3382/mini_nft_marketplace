@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:mini_nft_marketplace/core/resources/size_manager.dart';
 import 'package:mini_nft_marketplace/features/onBoarding/widgets/custom_card_on_boarding_page.dart';
