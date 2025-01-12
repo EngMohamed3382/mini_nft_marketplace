@@ -1,15 +1,15 @@
 import 'dart:ui';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mini_nft_marketplace/core/resources/asset_image_manager.dart';
 import 'package:mini_nft_marketplace/core/resources/color_manager.dart';
 import 'package:mini_nft_marketplace/core/resources/font_manager.dart';
 import 'package:mini_nft_marketplace/core/resources/size_manager.dart';
+import 'package:mini_nft_marketplace/models/collections_model.dart';
 
 class CustomCardWidget extends StatelessWidget {
-  const CustomCardWidget({super.key});
-
+  const CustomCardWidget({super.key, required this.cardModel});
+ final CollectionsModel cardModel;
   @override
   Widget build(BuildContext context) {
     return UnconstrainedBox(
@@ -21,31 +21,31 @@ class CustomCardWidget extends StatelessWidget {
               sigmaX: BlurValue.b10, sigmaY: BlurValue.b10),
           child: Container(
             alignment: Alignment.center,
-            padding: EdgeInsets.all(8),
+            padding: EdgeInsets.all(9),
             child: Column(
               children: [
                 Image(
                   image:
-                  AssetImage(AssetImageManager.trendingHomePage1),
+                  AssetImage(cardModel.image),
                   height: 139,
                 ),
-                SizedBox(
+              const  SizedBox(
                   height: 9,
                 ),
                 Row(
                   children: [
-                    Text('3D Art'),
-                    SizedBox(
+                    Text(cardModel.title),
+                  const  SizedBox(
                       width: 40,
                     ),
                     Row(
                       children: [
                         Icon(
                           CupertinoIcons.heart_fill,
-                          color: Colors.red,
+                          color: cardModel.activeLike? Colors.red:Colors.grey
                         ),
                         Text(
-                          '200',
+                          cardModel.countLike,
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontFamily:
