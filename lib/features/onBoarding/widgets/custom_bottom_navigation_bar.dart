@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mini_nft_marketplace/core/resources/color_manager.dart';
+import 'package:mini_nft_marketplace/core/resources/route_manager.dart';
 import 'package:mini_nft_marketplace/core/resources/size_manager.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
@@ -36,12 +37,14 @@ class CustomBottomNavigationBar extends StatelessWidget {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.only(left: 55, bottom: 40),
-                      child: Icon(
+                      padding: const EdgeInsets.only(left: 35, bottom: 40),
+                      child: IconButton(onPressed: (){
+                        Navigator.pushNamed(context, RouteName.kStatePage);
+                      }, icon: Icon(
                         Icons.stacked_bar_chart,
                         color: Colors.white,
                         size: 39,
-                      ),
+                      ),),
                     ),
                     Container(
                       width: 39,
