@@ -28,10 +28,10 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: true,
-      appBar: AppBar(
+      appBar: index == 0? AppBar(
         centerTitle: true,
-        title:  Text( index ==0?
-          'NFT Marketplace':'Stats',
+        title:  Text(
+          'NFT Marketplace',
           style: TextStyle(
             fontSize: 25.23,
             fontFamily: FontManagers.sfProDisplayFont,
@@ -40,7 +40,25 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         backgroundColor: Colors.transparent,
-      ),
+      ): index == 1? AppBar(
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 14),
+            child: Icon(Icons.more_horiz_outlined),
+          )
+        ],
+        centerTitle: true,
+        title:  Text(
+          'State',
+          style: TextStyle(
+            fontSize: 25.23,
+            fontFamily: FontManagers.sfProDisplayFont,
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        backgroundColor: Colors.transparent,
+      ): AppBar(title: Text('Null'),),
       body: w[index],
       backgroundColor: Color(0xff211134),
       bottomNavigationBar: CustomBottomNavigationBar(
