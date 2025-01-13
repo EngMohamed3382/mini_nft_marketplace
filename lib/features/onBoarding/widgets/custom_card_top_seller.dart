@@ -27,9 +27,13 @@ class CustomCardTopSeller extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Image(
-                  image: AssetImage(topSellerModel.image),
-                  height: 139,
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(19),
+                  child: Image(
+                    fit: BoxFit.cover,
+                    image: AssetImage(topSellerModel.image),
+                    height: 139,
+                  ),
                 ),
                const SizedBox(
                   height: 9,

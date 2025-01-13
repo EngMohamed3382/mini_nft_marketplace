@@ -23,10 +23,14 @@ class CustomCardWidget extends StatelessWidget {
             padding: EdgeInsets.all(9),
             child: Column(
               children: [
-                Image(
-                  image:
-                  AssetImage(cardModel.image),
-                  height: 139,
+                ClipRRect(
+                  borderRadius: BorderRadius.circular(19),
+                  child: Image(
+                    fit: BoxFit.cover,
+                    image:
+                    AssetImage(cardModel.image),
+                    height: 139,
+                  ),
                 ),
               const  SizedBox(
                   height: 9,
