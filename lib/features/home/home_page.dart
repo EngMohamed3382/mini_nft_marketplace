@@ -30,8 +30,8 @@ class _HomePageState extends State<HomePage> {
       extendBody: true,
       appBar: AppBar(
         centerTitle: true,
-        title: const Text(
-          'NFT Marketplace',
+        title:  Text( index ==0?
+          'NFT Marketplace':'Stats',
           style: TextStyle(
             fontSize: 25.23,
             fontFamily: FontManagers.sfProDisplayFont,
