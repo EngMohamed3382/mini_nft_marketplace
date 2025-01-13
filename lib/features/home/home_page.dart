@@ -1,18 +1,14 @@
 import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mini_nft_marketplace/core/resources/asset_image_manager.dart';
-import 'package:mini_nft_marketplace/core/resources/color_manager.dart';
 import 'package:mini_nft_marketplace/core/resources/constants.dart';
 import 'package:mini_nft_marketplace/core/resources/font_manager.dart';
-import 'package:mini_nft_marketplace/core/resources/size_manager.dart';
 import 'package:mini_nft_marketplace/core/resources/strings_manager.dart';
 import 'package:mini_nft_marketplace/features/onBoarding/widgets/custom_card_top_seller.dart';
 import 'package:mini_nft_marketplace/features/onBoarding/widgets/custom_card_widget.dart';
 import 'package:mini_nft_marketplace/features/onBoarding/widgets/custom_category_home_page.dart';
 import 'package:mini_nft_marketplace/features/onBoarding/widgets/custom_subtitle.dart';
-import 'package:mini_nft_marketplace/models/collections_model.dart';
-import 'package:mini_nft_marketplace/models/top_seller_model.dart';
+
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -77,14 +73,13 @@ class HomePage extends StatelessWidget {
               height: 236,
               child: ListView.separated(
                 scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) => CustomCardTopSeller(topSellerModel: TopSellerModel(AssetImageManager.topSeller1, 'title', 'subTitle', 100, true, 200)),
+                itemBuilder: (context, index) => CustomCardTopSeller(topSellerModel: Constants.topSellerModelList[index],),
                 separatorBuilder: (context, index) => SizedBox(
                   width: 28.83,
                 ),
-                itemCount: Constants.collectionList.length,
+                itemCount: Constants.topSellerModelList.length,
               ),
             ),
-
           ],
         ),
       ),
