@@ -5,7 +5,7 @@ import 'package:mini_nft_marketplace/features/onBoarding/screens/on_boarding_pag
 class RouteManagers {
   static Map<String, WidgetBuilder> routes = {
     RouteName.kOnBoardingPage: (context) => const OnBoardingPage(),
-    RouteName.kHomePage: (context) => const HomePage(),
+    RouteName.kHomePage: (context) =>  HomePage(),
   };
 }
 

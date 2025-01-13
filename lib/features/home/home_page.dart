@@ -1,8 +1,10 @@
 import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mini_nft_marketplace/core/resources/color_manager.dart';
 import 'package:mini_nft_marketplace/core/resources/constants.dart';
 import 'package:mini_nft_marketplace/core/resources/font_manager.dart';
+import 'package:mini_nft_marketplace/core/resources/size_manager.dart';
 import 'package:mini_nft_marketplace/core/resources/strings_manager.dart';
 import 'package:mini_nft_marketplace/features/onBoarding/widgets/custom_card_top_seller.dart';
 import 'package:mini_nft_marketplace/features/onBoarding/widgets/custom_card_widget.dart';
@@ -10,12 +12,19 @@ import 'package:mini_nft_marketplace/features/onBoarding/widgets/custom_category
 import 'package:mini_nft_marketplace/features/onBoarding/widgets/custom_subtitle.dart';
 
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class HomePage extends StatefulWidget {
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int index = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       appBar: AppBar(
         centerTitle: true,
         title: const Text(
@@ -84,6 +93,51 @@ class HomePage extends StatelessWidget {
         ),
       ),
       backgroundColor: Color(0xff211134),
+
+      bottomNavigationBar: Stack(
+        alignment: Alignment.center,
+        children: [
+          ClipRRect(
+            borderRadius: BorderRadius.circular(60),
+            // ignore: sort_child_properties_last
+            child: BackdropFilter(
+              filter: ImageFilter.blur(
+                  sigmaX: BlurValue.b10, sigmaY: BlurValue.b10),
+              child: Container(
+                child: Row(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 40, left: 10),
+                      child: Icon(Icons.home, color: Colors.white, size: 39,),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 65,bottom: 40),
+                      child: Icon(Icons.stacked_bar_chart, color: Colors.white, size: 39,),
+                    ),
+                    Container(width: 39,),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 65,bottom: 40),
+                      child: Icon(Icons.person, color: Colors.white, size: 39,),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 65,bottom: 40),
+                      child: Icon(Icons.search, color: Colors.white, size: 39,),
+                    ),
+                  ],
+                ),
+                height: 140,
+                alignment: Alignment.center,
+                padding: EdgeInsets.all(9),
+
+                color: ColorManager.kColorWhite.withOpacity(0.1),
+              ),
+            ),
+
+          ),
+          Container(color: Colors.red,height: 50, width: 20,),
+
+        ],
+      ),
     );
   }
 }
