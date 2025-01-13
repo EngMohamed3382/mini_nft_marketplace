@@ -11,9 +11,7 @@ import 'package:mini_nft_marketplace/features/onBoarding/widgets/custom_card_wid
 import 'package:mini_nft_marketplace/features/onBoarding/widgets/custom_category_home_page.dart';
 import 'package:mini_nft_marketplace/features/onBoarding/widgets/custom_subtitle.dart';
 
-
 class HomePage extends StatefulWidget {
-
   @override
   State<HomePage> createState() => _HomePageState();
 }
@@ -82,7 +80,9 @@ class _HomePageState extends State<HomePage> {
               height: 236,
               child: ListView.separated(
                 scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) => CustomCardTopSeller(topSellerModel: Constants.topSellerModelList[index],),
+                itemBuilder: (context, index) => CustomCardTopSeller(
+                  topSellerModel: Constants.topSellerModelList[index],
+                ),
                 separatorBuilder: (context, index) => SizedBox(
                   width: 28.83,
                 ),
@@ -93,50 +93,84 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
       backgroundColor: Color(0xff211134),
-
-      bottomNavigationBar: Stack(
-        alignment: Alignment.center,
-        children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(60),
-            // ignore: sort_child_properties_last
-            child: BackdropFilter(
-              filter: ImageFilter.blur(
-                  sigmaX: BlurValue.b10, sigmaY: BlurValue.b10),
-              child: Container(
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(bottom: 40, left: 10),
-                      child: Icon(Icons.home, color: Colors.white, size: 39,),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 65,bottom: 40),
-                      child: Icon(Icons.stacked_bar_chart, color: Colors.white, size: 39,),
-                    ),
-                    Container(width: 39,),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 65,bottom: 40),
-                      child: Icon(Icons.person, color: Colors.white, size: 39,),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 65,bottom: 40),
-                      child: Icon(Icons.search, color: Colors.white, size: 39,),
-                    ),
-                  ],
+      bottomNavigationBar: SizedBox(
+        height: 140,
+        child: Stack(
+          alignment: Alignment.center,
+          children: [
+            ClipRRect(
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(60),
+                topRight: Radius.circular(60),
+              ),
+              // ignore: sort_child_properties_last
+              child: BackdropFilter(
+                filter: ImageFilter.blur(
+                    sigmaX: BlurValue.b10, sigmaY: BlurValue.b10),
+                child: Container(
+                  child: Row(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 40, left: 10),
+                        child: Icon(
+                          Icons.home,
+                          color: Colors.white,
+                          size: 39,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 55, bottom: 40),
+                        child: Icon(
+                          Icons.stacked_bar_chart,
+                          color: Colors.white,
+                          size: 39,
+                        ),
+                      ),
+                      Container(
+                        width: 39,
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 85, bottom: 40),
+                        child: Icon(
+                          Icons.person,
+                          color: Colors.white,
+                          size: 39,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 50, bottom: 40),
+                        child: Icon(
+                          Icons.search,
+                          color: Colors.white,
+                          size: 39,
+                        ),
+                      ),
+                    ],
+                  ),
+                  height: 110,
+                  alignment: Alignment.center,
+                  padding: EdgeInsets.all(9),
+                  color: ColorManager.kColorWhite.withOpacity(0.1),
                 ),
-                height: 140,
-                alignment: Alignment.center,
-                padding: EdgeInsets.all(9),
-
-                color: ColorManager.kColorWhite.withOpacity(0.1),
               ),
             ),
-
-          ),
-          Container(color: Colors.red,height: 50, width: 20,),
-
-        ],
+            Positioned(
+              top: 0,
+              child: Container(
+                child: Icon(
+                  CupertinoIcons.plus,
+                  color: Colors.white,
+                ),
+                decoration: ShapeDecoration(
+                  shape: StarBorder.polygon(sides: 6, pointRounding: 0.4),
+                  color: Color(0xffD7CDCDFF),
+                ),
+                height: 70,
+                width: 70,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
