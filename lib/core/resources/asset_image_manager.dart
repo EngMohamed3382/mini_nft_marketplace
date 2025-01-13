@@ -8,4 +8,7 @@ class AssetImageManager {
   static const String trendingHomePage1 = 'asstes/images/trending1.png';
   static const String trendingHomePage2 = 'asstes/images/trending2.png';
   static const String trendingHomePage3 = 'asstes/images/trending3.png';
+  static const String topSeller1 = 'asstes/images/topSeller1.png';
+  static const String topSeller2 = 'asstes/images/topSeller2.png';
+  static const String topSeller3 = 'asstes/images/topSeller3.png';
 }
