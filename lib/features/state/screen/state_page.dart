@@ -10,17 +10,13 @@ class StatePage extends StatelessWidget {
     return Column(
       children: [
         Container(
-
           decoration: BoxDecoration(
-            border: Border(bottom: BorderSide(
-                width: 0.7,
-                color: Color(0xFF97A9F6)))
-          ),
+              border: Border(
+                  bottom: BorderSide(width: 0.7, color: Color(0xFF97A9F6)))),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Container(
-
                 child: Column(
                   children: [
                     Row(
@@ -40,7 +36,19 @@ class StatePage extends StatelessWidget {
                       ],
                     ),
                     SizedBox(height: 20),
-                    Container(color: Colors.purple, width: 106, height: 3.6,)
+                    Container(
+                      decoration:
+                          BoxDecoration(color: Colors.purple, boxShadow: [
+                        BoxShadow(
+                          blurRadius: 16,
+                          offset: Offset(5, -5),
+                          color: Colors.purple,
+                          spreadRadius: 1,
+                        ),
+                      ]),
+                      width: 106,
+                      height: 3.6,
+                    )
                   ],
                 ),
               ),
@@ -62,7 +70,6 @@ class StatePage extends StatelessWidget {
             ],
           ),
         ),
-
       ],
     );
   }
