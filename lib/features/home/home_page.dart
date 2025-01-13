@@ -73,7 +73,17 @@ class HomePage extends StatelessWidget {
             SizedBox(
               height: 7,
             ),
-            CustomCardTopSeller(topSellerModel:TopSellerModel(AssetImageManager.topSeller1, "title", "subTitle", 100, true, 200) ,),
+            SizedBox(
+              height: 236,
+              child: ListView.separated(
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) => CustomCardTopSeller(topSellerModel: TopSellerModel(AssetImageManager.topSeller1, 'title', 'subTitle', 100, true, 200)),
+                separatorBuilder: (context, index) => SizedBox(
+                  width: 28.83,
+                ),
+                itemCount: Constants.collectionList.length,
+              ),
+            ),
 
           ],
         ),
