@@ -10,28 +10,39 @@ class StatePage extends StatelessWidget {
     return Column(
       children: [
         Container(
-          padding: EdgeInsets.all(16),
+
           decoration: BoxDecoration(
-            border: Border(bottom: BorderSide(color: Colors.white))
+            border: Border(bottom: BorderSide(
+                width: 0.7,
+                color: Color(0xFF97A9F6)))
           ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Icon(
-                    Icons.stacked_bar_chart,
-                    color: Colors.grey,
-                  ),
-                  Text(
-                    'Ranking',
-                    style: TextStyle(
-                        color: Colors.white,
-                        fontFamily: FontManagers.sfProDisplayFont,
-                        fontWeight: FontWeight.bold),
-                  )
-                ],
+              Container(
+
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(
+                          Icons.stacked_bar_chart,
+                          color: Colors.grey,
+                        ),
+                        Text(
+                          'Ranking',
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontFamily: FontManagers.sfProDisplayFont,
+                              fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    ),
+                    SizedBox(height: 20),
+                    Container(color: Colors.purple, width: 106, height: 3.6,)
+                  ],
+                ),
               ),
               Row(
                 children: [
