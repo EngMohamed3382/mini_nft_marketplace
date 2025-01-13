@@ -7,7 +7,10 @@ import 'package:mini_nft_marketplace/core/resources/route_manager.dart';
 import 'package:mini_nft_marketplace/core/resources/size_manager.dart';
 
 class CustomBottomNavigationBar extends StatelessWidget {
-  const CustomBottomNavigationBar({super.key});
+  const CustomBottomNavigationBar({super.key, required this.onPressedState, required this.onPressedHome});
+
+  final VoidCallback onPressedState;
+  final VoidCallback onPressedHome;
 
   @override
   Widget build(BuildContext context) {
@@ -30,17 +33,15 @@ class CustomBottomNavigationBar extends StatelessWidget {
                   children: [
                     Padding(
                       padding: const EdgeInsets.only(bottom: 40, left: 10),
-                      child: Icon(
+                      child: IconButton(onPressed: onPressedHome, icon: Icon(
                         Icons.home,
                         color: Colors.white,
                         size: 39,
-                      ),
+                      ) ),
                     ),
                     Padding(
                       padding: const EdgeInsets.only(left: 35, bottom: 40),
-                      child: IconButton(onPressed: (){
-                        Navigator.pushNamed(context, RouteName.kStatePage);
-                      }, icon: Icon(
+                      child: IconButton(onPressed: onPressedState, icon: Icon(
                         Icons.stacked_bar_chart,
                         color: Colors.white,
                         size: 39,
