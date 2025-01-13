@@ -54,7 +54,7 @@ class HomePage extends StatelessWidget {
             child: ListView.separated(
               scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) => CustomCardWidget(
-                  cardModel: CollectionsModel(AssetImageManager.trendingHomePage1, '3D Art', true, '300'),
+                 cardModel: Constants.collectionList[index],
                 ),
                 separatorBuilder: (context, index) => SizedBox(width: 28.83,),
                 itemCount: 3,

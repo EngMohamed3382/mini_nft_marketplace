@@ -1,7 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mini_nft_marketplace/core/resources/asset_image_manager.dart';
 import 'package:mini_nft_marketplace/core/resources/color_manager.dart';
 import 'package:mini_nft_marketplace/core/resources/font_manager.dart';
 import 'package:mini_nft_marketplace/core/resources/size_manager.dart';
