@@ -15,7 +15,7 @@ class CustomTableRowStatePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(9.0),
+      padding: const EdgeInsets.all(14.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -52,6 +52,7 @@ class CustomTableRowStatePage extends StatelessWidget {
             ),
           ),
           SizedBox(width: 28,),
+          Spacer(),
           Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
@@ -76,7 +77,7 @@ class CustomTableRowStatePage extends StatelessWidget {
                       fontSize: 12,
                       fontWeight: FontWeight.bold)),
             ],
-          )
+          ),
         ],
       ),
     );
