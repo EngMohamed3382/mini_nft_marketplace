@@ -6,6 +6,7 @@ import 'package:mini_nft_marketplace/core/resources/size_manager.dart';
 import 'package:mini_nft_marketplace/features/state/widgets/custom_category_of_state_page.dart';
 import 'package:mini_nft_marketplace/features/state/widgets/custom_sub_title.dart';
 import 'package:mini_nft_marketplace/features/state/widgets/custom_table_row_state_page.dart';
+import 'package:mini_nft_marketplace/models/table_row_model.dart';
 
 class StatePage extends StatelessWidget {
   const StatePage({super.key});
@@ -52,15 +53,18 @@ class StatePage extends StatelessWidget {
                 child: Container(
                   color: Colors.white.withOpacity(0.1),
                   child: ListView.separated(
-                    physics: NeverScrollableScrollPhysics(),
-                    shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
                       itemBuilder: (context, index) => CustomTableRowStatePage(
-                          order: 1,
-                          image: AssetImageManager.topSeller2,
-                          name: 'name',
-                          subName: 'subName',
-                          count1: 'count1',
-                          percent1: 'percent1'),
+                            tableRowModel: TableRowModel(
+                                index + 1,
+                                AssetImageManager.catHomePage1,
+                                'name $index',
+                                'subName $index',
+                                '${index * 10}',
+                                'percent1',
+                                index%3==0?true:false),
+                          ),
                       separatorBuilder: (context, index) => SizedBox(
                             height: 9,
                           ),

@@ -1,16 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:mini_nft_marketplace/models/table_row_model.dart';
 
 
 
 class CustomTableRowStatePage extends StatelessWidget {
-  const CustomTableRowStatePage({super.key, required this.order, required this.image, required this.name, required this.subName, required this.count1, required this.percent1});
+  const CustomTableRowStatePage({super.key, required this.tableRowModel,});
 
-  final int order;
-  final String image;
-  final String name;
-  final String subName;
-  final String count1;
-  final String percent1;
+  final TableRowModel tableRowModel;
 
   @override
   Widget build(BuildContext context) {
@@ -19,13 +15,13 @@ class CustomTableRowStatePage extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text('$order'),
+          Text('${tableRowModel.order}'),
           SizedBox(width: 10,),
           ClipRRect(
             borderRadius: BorderRadius.circular(9),
             child: Image(
               fit: BoxFit.cover,
-              image: AssetImage(image),
+              image: AssetImage(tableRowModel.image),
               width: 39,
               height: 39,
             ),
@@ -38,14 +34,14 @@ class CustomTableRowStatePage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                    name,
+                    tableRowModel.name,
                   style: TextStyle(
                       fontSize: 15,
                       color: Colors.white,
                       fontWeight: FontWeight.bold),
                 ),
                 Text(
-                  subName,
+                  tableRowModel.subName,
                   style: TextStyle(fontSize: 11),
                 )
               ],
@@ -53,17 +49,18 @@ class CustomTableRowStatePage extends StatelessWidget {
           ),
           SizedBox(width: 28,),
           Spacer(),
+          Icon(
+            Icons.link,
+            size: 15,
+          ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Row(
                 children: [
-                  Icon(
-                    Icons.link,
-                    size: 15,
-                  ),
+
                   Text(
-                    count1,
+                    tableRowModel.count1,
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 13,
@@ -71,9 +68,9 @@ class CustomTableRowStatePage extends StatelessWidget {
                   ),
                 ],
               ),
-              Text(percent1,
+              Text(tableRowModel.percent1,
                   style: TextStyle(
-                      color: Colors.green,
+                      color:tableRowModel.active? Colors.green:Colors.red,
                       fontSize: 12,
                       fontWeight: FontWeight.bold)),
             ],
