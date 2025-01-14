@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mini_nft_marketplace/core/resources/font_manager.dart';
 import 'package:mini_nft_marketplace/features/state/widgets/custom_category_of_state_page.dart';
 import 'package:mini_nft_marketplace/features/state/widgets/custom_sub_title.dart';
 
@@ -18,8 +17,19 @@ class StatePage extends StatelessWidget {
           height: 27,
         ),
         Row(
+          mainAxisSize: MainAxisSize.min,
           children: [
-            CustomCategoryOfStatePage(),
+            CustomCategoryOfStatePage(
+              title: 'All Category',
+              iconData: Icons.menu,
+            ),
+            SizedBox(
+              width: 20 ,
+            ),
+            CustomCategoryOfStatePage(
+              title: 'All Chains',
+              iconData: Icons.link,
+            ),
           ],
         ),
       ],

@@ -3,7 +3,9 @@ import 'package:mini_nft_marketplace/core/resources/font_manager.dart';
 
 
 class CustomCategoryOfStatePage extends StatelessWidget {
-  const CustomCategoryOfStatePage({super.key});
+  const CustomCategoryOfStatePage({super.key, required this.title, required this.iconData});
+final String title;
+final IconData iconData;
 
   @override
   Widget build(BuildContext context) {
@@ -13,11 +15,12 @@ class CustomCategoryOfStatePage extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Icon(
-            Icons.menu,
+            iconData,
             color: Colors.grey,
           ),
+          SizedBox(width: 2,),
           Text(
-            'All Category',
+            title,
             style: TextStyle(
                 fontSize: 12,
                 fontWeight: FontWeight.bold,
