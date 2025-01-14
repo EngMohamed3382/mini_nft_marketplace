@@ -1,17 +1,9 @@
 import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:mini_nft_marketplace/core/resources/color_manager.dart';
-import 'package:mini_nft_marketplace/core/resources/constants.dart';
 import 'package:mini_nft_marketplace/core/resources/font_manager.dart';
-import 'package:mini_nft_marketplace/core/resources/size_manager.dart';
-import 'package:mini_nft_marketplace/core/resources/strings_manager.dart';
 import 'package:mini_nft_marketplace/features/home/homep.dart';
 import 'package:mini_nft_marketplace/features/onBoarding/widgets/custom_bottom_navigation_bar.dart';
-import 'package:mini_nft_marketplace/features/onBoarding/widgets/custom_card_top_seller.dart';
-import 'package:mini_nft_marketplace/features/onBoarding/widgets/custom_card_widget.dart';
-import 'package:mini_nft_marketplace/features/onBoarding/widgets/custom_category_home_page.dart';
-import 'package:mini_nft_marketplace/features/onBoarding/widgets/custom_subtitle.dart';
 import 'package:mini_nft_marketplace/features/state/screen/state_page.dart';
 
 class HomePage extends StatefulWidget {

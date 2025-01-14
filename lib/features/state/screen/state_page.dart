@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mini_nft_marketplace/core/resources/color_manager.dart';
-import 'package:mini_nft_marketplace/core/resources/font_manager.dart';
+import 'package:mini_nft_marketplace/features/state/widgets/custom_sub_title.dart';
 
 class StatePage extends StatelessWidget {
   const StatePage({super.key});
@@ -9,67 +8,7 @@ class StatePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          decoration: BoxDecoration(
-              border: Border(
-                  bottom: BorderSide(width: 0.7, color: Color(0xFF97A9F6)))),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              Container(
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(
-                          Icons.stacked_bar_chart,
-                          color: Colors.grey,
-                        ),
-                        Text(
-                          'Ranking',
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontFamily: FontManagers.sfProDisplayFont,
-                              fontWeight: FontWeight.bold),
-                        )
-                      ],
-                    ),
-                    SizedBox(height: 20),
-                    Container(
-                      decoration:
-                          BoxDecoration(color: Colors.purple, boxShadow: [
-                        BoxShadow(
-                          blurRadius: 16,
-                          offset: Offset(5, -5),
-                          color: Colors.purple,
-                          spreadRadius: 1,
-                        ),
-                      ]),
-                      width: 106,
-                      height: 3.6,
-                    )
-                  ],
-                ),
-              ),
-              Row(
-                children: [
-                  Icon(
-                    Icons.stacked_line_chart,
-                    color: Colors.grey,
-                  ),
-                  Text(
-                    'Activity',
-                    style: TextStyle(
-                        color: Colors.grey,
-                        fontFamily: FontManagers.sfProDisplayFont,
-                        fontWeight: FontWeight.bold),
-                  )
-                ],
-              ),
-            ],
-          ),
-        ),
+        CustomSubTitleStatePage(),
       ],
     );
   }
