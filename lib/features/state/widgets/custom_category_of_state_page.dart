@@ -10,6 +10,7 @@ final IconData iconData;
   @override
   Widget build(BuildContext context) {
     return Container(
+
       alignment: Alignment.center,
       child: Row(
         mainAxisSize: MainAxisSize.min,
